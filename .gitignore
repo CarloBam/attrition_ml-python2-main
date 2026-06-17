@@ -1,0 +1,23 @@
+# Python virtual environment
+.venv/
+env/
+venv/
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Editor and tool settings
+.vscode/
+.config/
+
+# VS Code and helper artefacts
+attached_assets/
+uv.lock
+
+# Streamlit cache (keep config.toml, ignore cache)
+.streamlit/cache/
+
+# OS junk
+.DS_Store
+Thumbs.db
