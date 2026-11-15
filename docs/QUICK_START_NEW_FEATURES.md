@@ -217,7 +217,7 @@ pip install reportlab                  # For PDF
 
 ```powershell
 # Navigate to project
-cd c:\Users\W7165623\Documents\attrition_ml-python2
+cd <project-folder>
 
 # Run app
 streamlit run app.py

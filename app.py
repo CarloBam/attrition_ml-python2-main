@@ -1130,7 +1130,7 @@ with tab2:
                     st.session_state.training_data = training_df
                     st.session_state.training_data_uploaded = True
                 except ImportError:
-                    st.error("google-cloud-bigquery not installed")
+                    st.error("This connector needs google-cloud-bigquery installed. It is disabled in the hosted demo.")
             except Exception as e:
                 status_placeholder.error(f"❌ BigQuery error: {str(e)}")
     
@@ -1145,10 +1145,10 @@ with tab2:
                 progress_bar = progress_placeholder.progress(0)
                 status_placeholder.text("📦 Connecting to S3...")
                 try:
-                    import importlib
+                    import importlib.util
                     # Check if boto3 is available before importing
                     if importlib.util.find_spec("boto3") is None:
-                        status_placeholder.error("❌ `boto3` not installed. Install with: pip install boto3")
+                        st.error("This connector needs boto3 installed. It is disabled in the hosted demo.")
                     else:
                         # Import via importlib to avoid static import errors in environments
                         boto3 = importlib.import_module('boto3')
@@ -1183,9 +1183,9 @@ with tab2:
                 progress_bar = progress_placeholder.progress(0)
                 status_placeholder.text("☁️ Connecting to Azure...")
                 try:
-                    import importlib, io
+                    import importlib.util, io
                     if importlib.util.find_spec("azure.storage.blob") is None:
-                        status_placeholder.error("❌ `azure-storage-blob` not installed. Install with: pip install azure-storage-blob")
+                        st.error("This connector needs azure-storage-blob installed. It is disabled in the hosted demo.")
                     else:
                         # Dynamically import azure blob client to avoid static analyzer issues
                         azure_blob = importlib.import_module('azure.storage.blob')
@@ -1202,6 +1202,11 @@ with tab2:
                         status_placeholder.success(f"✅ Loaded {len(training_df):,} rows from Azure")
                         st.session_state.training_data = training_df
                         st.session_state.training_data_uploaded = True
+                except ModuleNotFoundError as e:
+                    if e.name and e.name.startswith("azure"):
+                        st.error("This connector needs azure-storage-blob installed. It is disabled in the hosted demo.")
+                    else:
+                        status_placeholder.error(f"❌ Azure error: {str(e)}")
                 except Exception as e:
                     status_placeholder.error(f"❌ Azure error: {str(e)}")
             except Exception as e:

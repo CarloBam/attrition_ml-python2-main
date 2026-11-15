@@ -11,7 +11,7 @@ Status: **READY FOR PRODUCTION**
 
 ```powershell
 # Step 1: Navigate to project
-cd c:\Users\W7165623\Documents\attrition_ml-python2
+cd <project-folder>
 
 # Step 2: Install/update dependencies
 pip install -e .

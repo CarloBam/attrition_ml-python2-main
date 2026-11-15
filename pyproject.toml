@@ -15,7 +15,4 @@ dependencies = [
     "openpyxl>=3.10.0",
     "python-docx>=0.8.11",
     "reportlab>=4.0.0",
-    "google-cloud-bigquery>=3.10.0",
-    "boto3>=1.26.0",
-    "azure-storage-blob>=12.14.0",
 ]

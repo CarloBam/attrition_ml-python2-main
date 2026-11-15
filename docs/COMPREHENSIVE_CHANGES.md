@@ -414,7 +414,7 @@ Based on risk probability:
 
 ```bash
 # Navigate to project
-cd c:\Users\W7165623\Documents\attrition_ml-python2
+cd <project-folder>
 
 # Install dependencies (if needed)
 pip install -e .

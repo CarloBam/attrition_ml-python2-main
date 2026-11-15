@@ -142,7 +142,7 @@ Follow all tests in `IMPLEMENTATION_GUIDE.md`
 ## Project Files
 
 ```
-c:\Users\W7165623\Documents\attrition_ml-python2\
+<project-folder>\
 ├── app.py                           (Main app - UPDATED)
 ├── COMPREHENSIVE_CHANGES.md         (Technical details - NEW)
 ├── IMPLEMENTATION_GUIDE.md          (Testing guide - NEW)
@@ -161,7 +161,7 @@ c:\Users\W7165623\Documents\attrition_ml-python2\
 ## Running the App
 
 ```bash
-cd c:\Users\W7165623\Documents\attrition_ml-python2
+cd <project-folder>
 streamlit run app.py
 ```
 

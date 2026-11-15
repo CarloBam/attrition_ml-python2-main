@@ -1,5 +1,5 @@
 @echo off
 cd /d "%~dp0"
 call .venv\Scripts\activate.bat
-python -m streamlit run app.py
+python -m streamlit run app.py --server.port 5000
 pause

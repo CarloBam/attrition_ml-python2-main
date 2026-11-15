@@ -47,7 +47,7 @@ All **10 major requirements** have been implemented and are ready for testing:
 
 ### 1. Start the App
 ```bash
-cd c:\Users\W7165623\Documents\attrition_ml-python2
+cd <project-folder>
 streamlit run app.py
 ```
 
